@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Google Sheets Access</title>
+</head>
+<body>
+    <h1>Google Sheets Access Test</h1>
+    <button onclick="testAPI()">Test API</button>
+    <button onclick="testCSV()">Test CSV</button>
+    <button onclick="testCSVAlt()">Test CSV Alt</button>
+    <div id="results"></div>
+
+    <script>
+        const SHEET_ID = '1huaeuW4wszb1F8eTytVi4RC_T88fZwpTDZgiJs8u5RY';
+        const API_KEY = 'AIzaSyCl9iFfxfVzJ-LXqgtwGCzSBnHus-1xWTA';
+        const SHEET_RANGE = 'Sheet1!A:I';
+        const API_URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_RANGE}?key=${API_KEY}`;
+        const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+        const CSV_URL_ALT = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Sheet1`;
+
+        function log(message) {
+            document.getElementById('results').innerHTML += '<p>' + message + '</p>';
+            console.log(message);
+        }
+
+        async function testAPI() {
+            log('Testing API: ' + API_URL);
+            try {
+                const response = await fetch(API_URL);
+                log('API Status: ' + response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log('API Success: ' + JSON.stringify(data, null, 2));
+                } else {
+                    const error = await response.text();
+                    log('API Error: ' + error);
+                }
+            } catch (error) {
+                log('API Exception: ' + error.message);
+            }
+        }
+
+        async function testCSV() {
+            log('Testing CSV: ' + CSV_URL);
+            try {
+                const response = await fetch(CSV_URL);
+                log('CSV Status: ' + response.status);
+                
+                if (response.ok) {
+                    const text = await response.text();
+                    log('CSV Success: ' + text.substring(0, 500) + '...');
+                } else {
+                    const error = await response.text();
+                    log('CSV Error: ' + error);
+                }
+            } catch (error) {
+                log('CSV Exception: ' + error.message);
+            }
+        }
+
+        async function testCSVAlt() {
+            log('Testing CSV Alt: ' + CSV_URL_ALT);
+            try {
+                const response = await fetch(CSV_URL_ALT);
+                log('CSV Alt Status: ' + response.status);
+                
+                if (response.ok) {
+                    const text = await response.text();
+                    log('CSV Alt Success: ' + text.substring(0, 500) + '...');
+                } else {
+                    const error = await response.text();
+                    log('CSV Alt Error: ' + error);
+                }
+            } catch (error) {
+                log('CSV Alt Exception: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
