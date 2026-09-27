@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Entry - Phone Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Add New Entry</h1>
+            <a href="index.html" class="back-link">
+                <i data-lucide="arrow-left"></i>
+                Back to Directory
+            </a>
+        </header>
+        
+        <div class="form-container">
+            <form id="entryForm" class="entry-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Role *</label>
+                    <input type="text" id="role" name="role" required placeholder="e.g., Software Engineer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactNo">Contact Number *</label>
+                    <input type="tel" id="contactNo" name="contactNo" required placeholder="e.g., +1234567890">
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="e.g., +1234567890">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="instagram">Instagram Profile</label>
+                    <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="threads">Threads Profile</label>
+                    <input type="url" id="threads" name="threads" placeholder="https://threads.net/@username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Enter full address"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i data-lucide="plus-circle"></i>
+                    Add Entry
+                </button>
+            </form>
+            
+            <div id="message" class="message hidden"></div>
+        </div>
+    </div>
+
+    <!-- Professional Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Phone Directory</h3>
+                <p>A minimalistic and professional contact management system</p>
+            </div>
+            <div class="footer-social">
+                <p class="footer-label">Connect with the Developer</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/girish_lade_/" target="_blank" class="social-link" title="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/girish-lade-075bba201/" target="_blank" class="social-link" title="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="https://github.com/girishlade111" target="_blank" class="social-link" title="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="https://codepen.io/Girish-Lade-the-looper" target="_blank" class="social-link" title="CodePen">
+                        <i data-lucide="code"></i>
+                    </a>
+                    <a href="mailto:girishlade111@gmail.com" class="social-link" title="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Phone Directory. Designed & Developed by Girish Lade</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="directory-script.js"></script>
+    <script src="form-handler.js"></script>
+</body>
+</html>

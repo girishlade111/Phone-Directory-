@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Phone Directory</h1>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by name or role..." class="search-input">
+                <i data-lucide="search" class="search-icon"></i>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading directory...</p>
+        </div>
+
+        <div class="directory-grid" id="directoryGrid">
+            <!-- Contact cards will be dynamically inserted here -->
+        </div>
+
+
+    </div>
+
+    <!-- Professional Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Phone Directory</h3>
+                <p>A minimalistic and professional contact management system</p>
+            </div>
+            <div class="footer-social">
+                <p class="footer-label">Connect with the Developer</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/girish_lade_/" target="_blank" class="social-link" title="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/girish-lade-075bba201/" target="_blank" class="social-link" title="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="https://github.com/girishlade111" target="_blank" class="social-link" title="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="https://codepen.io/Girish-Lade-the-looper" target="_blank" class="social-link" title="CodePen">
+                        <i data-lucide="code"></i>
+                    </a>
+                    <a href="mailto:girishlade111@gmail.com" class="social-link" title="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Phone Directory. Designed & Developed by Girish Lade</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="directory-script.js"></script>
+</body>
+
+</html>
